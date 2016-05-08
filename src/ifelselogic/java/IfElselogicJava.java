@@ -1,47 +1,64 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package april123
+package ifelselogic.java;
 
-Import java.util.ArrayList;
-public class IfElse Logic{
- public static void printStudentDate(Student[] studentDate){   
- System.out.println("Student Data:");
- for(int i=0;i< studentData.Length; i++){
-  System.out.println("name:"+ studentData[i]. getName() +" Semester: " + studentData[i] . getsemester());
- }
- }
-public static student[] get8thSemesterstudents(student[] studentData){
-    
-ArrayList newStudentData= new ArrayList();
-for (int i=0;i < studentData.lenght; i++){
- Student Student=StudentData[i];  
- if (Student.getSemester().equalsIgnoreCase ("8th")){
-  newStudentData.add(student); 
- }
- }
-return (student[]) newStudentData.toArray(newstudentdata.size()]);
+import java.util.ArrayList;
+
+/**
+ *
+ * @author dilipkumar
+ */
+public class IfElselogicJava {
+
+    public static void printStudentData(Student[] studentData) {
+        System.out.println("Student Data:");
+        //for loop to print it
+        for (int i = 0; i < studentData.length; i++) {
+            System.out.println("name: " + studentData[i].getName() + " Semester: " + studentData[i].getSemester());
+        }
+    }
+
+    public static Student[] get8thSemesterStudents(Student[] studentData) {
+
+        //Student[] newStudentData  = {};
+        ArrayList newStudentData = new ArrayList();
+        //loop in each students
+        for (int i = 0; i < studentData.length; i++) {
+            //read the student object
+            Student student = studentData[i];
+            //check for semester
+            if (student.getSemester().equalsIgnoreCase("8th")) {
+                //add 8th seemster student in new list
+                newStudentData.add(student);
+            }
+        }
+        //Convert ArrayList into Array
+        return (Student[]) newStudentData.toArray(new Student[newStudentData.size()]);
+    }
+
+    public static void main(String[] arg) {
+        //count number of studentds in class 8th semester from the given list of students
+        
+        Student student1 = new Student("Nitu", "8th");        
+        Student student2 = new Student("Jaya", "6th");
+        Student student3 = new Student("Amir", "5th");
+        Student student4 = new Student("Rohan", "8th");
+        Student student5 = new Student("Banti", "7th");
+
+        //student data
+        Student[] studentData = {student1, student2, student3, student4, student5};
+        
+        //print all the students  
+        printStudentData(studentData);
+        //get the list of 8th semester student
+        Student [] semester8thStudentData = get8thSemesterStudents(studentData);
+        //print the 8th semester student data
+        printStudentData(semester8thStudentData);
+        //print the count
+        System.out.println("Count of 8th semester student: "+semester8thStudentData.length);
+    }
 
 }
-public static void main(String[] arg){
-    
-Student student1=new Student("Nitu","8th");
-Student student2=new student("java","6th");
-Student student3=new student("Amir","5th");
-Student student4=new student("Rohan","8th");
-Student student5=new student("Banti","7th");
-Student[] studentData={student1,student2,student3,student4,student5};
-printStudentData(studentData);
-Student [] semester8thStudentData=get8thSemesterStudent(studentData);
-printStudentData(semester8thStudentData);
-System.out.println("Count" of 8th semester student:"semester8thStudentData.length);
-}
-}
-     
-    
-
-  
-    
-    
